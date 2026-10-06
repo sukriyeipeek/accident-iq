@@ -1,0 +1,63 @@
+{
+  "source": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+  "guide_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+  "files": [
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2019.csv",
+      "bytes": 23524706,
+      "sha256": "729806fc1849bbf27ad305a9616c69583e91baf00c326b68e7de9876baa9d558"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2019.csv",
+      "bytes": 23953229,
+      "sha256": "06abaed875713ca4310adb0dd5f3a03a168bc2a55ca63af4a45e9677a229e329"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2019.csv",
+      "bytes": 13468675,
+      "sha256": "a286856211693a31b45b8d414ddd82d6b51e7ffa27b6334662abfd9f82b9612d"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2020.csv",
+      "bytes": 18228231,
+      "sha256": "851b53f39d503130240a918b0ca51a9da2f667fd4e25189fc3cea220793c68f5"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2020.csv",
+      "bytes": 18553536,
+      "sha256": "415fa554e4da1d5ec5965b6e4874b3d54791f91ba28373b1d6fa4c92e8b81ff3"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2020.csv",
+      "bytes": 10149317,
+      "sha256": "05a1a6111dc9aa820e650eb1f3474085ca81b0353359a38b6b8235757fe39da8"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2021.csv",
+      "bytes": 19208797,
+      "sha256": "e729a3276859120261c616cbc0ac4ac7be034a608895928c41c765b3e3749ba9"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2021.csv",
+      "bytes": 20519491,
+      "sha256": "80d3c8eea4547d9014ef3ce7698ae0942907aafefd8576f614c05fc9777f6d13"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2021.csv",
+      "bytes": 10674693,
+      "sha256": "272c04fae888c1b09447e55db211c9af43a003a42cd27b184405bcdde13e4df0"
+    },
+    {
+      "path": "config/stats19_data_guide_2025.xlsx",
+      "bytes": 85112,
+      "sha256": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12"
+    }
+  ],
+  "environment": {
+    "python": "3.11.9",
+    "pandas": "2.3.1",
+    "numpy": "2.2.6",
+    "matplotlib": "3.10.6",
+    "seaborn": "0.13.2"
+  }
+}

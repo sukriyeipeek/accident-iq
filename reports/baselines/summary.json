@@ -1,0 +1,2375 @@
+{
+  "phase": 4,
+  "completed": true,
+  "train_rows": 117536,
+  "validation_rows": 91199,
+  "selected_baseline": "logistic_balanced",
+  "selection_source": "2019 quarterly CV macro F1 only",
+  "test_scored": false,
+  "test_loaded_for_training_or_scoring": false,
+  "protocol": {
+    "phase": 4,
+    "train_year": 2019,
+    "validation_year": 2020,
+    "test_year": 2021,
+    "test_scoring": false,
+    "seed": 42,
+    "thread_limit": 1,
+    "models": [
+      "dummy_prior",
+      "logistic",
+      "logistic_balanced"
+    ],
+    "primary_selection": "mean_macro_f1_on_2019_quarterly_cv",
+    "tie_break": "lexicographic_model_name",
+    "logistic": {
+      "C": 1.0,
+      "penalty": "l2",
+      "solver": "lbfgs",
+      "tol": 1e-06,
+      "max_iter": 2000
+    },
+    "sampling": "none",
+    "decision_rule": "multiclass_argmax",
+    "hyperparameter_search": false
+  },
+  "cv_results": {
+    "dummy_prior": [
+      {
+        "fold": 1,
+        "fit_rows": 27636,
+        "validation_rows": 28599,
+        "fit_until": "2019-03-31T23:20:00",
+        "validation_from": "2019-04-01T00:01:00",
+        "fit_seconds": 0.3923152999486774,
+        "pipeline": {
+          "fit_rows": 27636,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": []
+        },
+        "metrics": {
+          "rows": 28599,
+          "accuracy": 0.7869156264205042,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.29358432477562096,
+          "weighted_f1": 0.6930782785141455,
+          "log_loss": 0.5680782981865107,
+          "multiclass_brier": 0.3410059692133394,
+          "roc_auc_ovr_macro": 0.5,
+          "average_precision_ovr_macro": 0.3333333333333333,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              374
+            ],
+            [
+              0,
+              0,
+              5720
+            ],
+            [
+              0,
+              0,
+              22505
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 374,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.013077380327983496,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.013077380327983496
+            },
+            "Serious": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5720,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.20000699325151228,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.20000699325151228
+            },
+            "Slight": {
+              "precision": 0.7869156264205042,
+              "recall": 1.0,
+              "f1": 0.8807529743268628,
+              "support": 22505,
+              "predicted_count": 28599,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7869156264205042,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.7869156264205042
+            }
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "fit_rows": 56235,
+        "validation_rows": 30081,
+        "fit_until": "2019-06-30T23:45:00",
+        "validation_from": "2019-07-01T00:22:00",
+        "fit_seconds": 0.6240558000281453,
+        "pipeline": {
+          "fit_rows": 56235,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": []
+        },
+        "metrics": {
+          "rows": 30081,
+          "accuracy": 0.7771683122236628,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.2915380634380242,
+          "weighted_f1": 0.6797224341332531,
+          "log_loss": 0.5854196079829918,
+          "multiclass_brier": 0.352982269345506,
+          "roc_auc_ovr_macro": 0.5,
+          "average_precision_ovr_macro": 0.3333333333333333,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              442
+            ],
+            [
+              0,
+              0,
+              6261
+            ],
+            [
+              0,
+              0,
+              23378
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 442,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.014693660450118015,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.014693660450118015
+            },
+            "Serious": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6261,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.20813802732621922,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.20813802732621922
+            },
+            "Slight": {
+              "precision": 0.7771683122236628,
+              "recall": 1.0,
+              "f1": 0.8746141903140725,
+              "support": 23378,
+              "predicted_count": 30081,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7771683122236628,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.7771683122236628
+            }
+          }
+        }
+      },
+      {
+        "fold": 3,
+        "fit_rows": 86316,
+        "validation_rows": 31220,
+        "fit_until": "2019-09-30T23:50:00",
+        "validation_from": "2019-10-01T00:01:00",
+        "fit_seconds": 0.9712668999563903,
+        "pipeline": {
+          "fit_rows": 86316,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": []
+        },
+        "metrics": {
+          "rows": 31220,
+          "accuracy": 0.7976617552850737,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.2958145501844164,
+          "weighted_f1": 0.7078798600168982,
+          "log_loss": 0.5533891544858878,
+          "multiclass_brier": 0.328057695037901,
+          "roc_auc_ovr_macro": 0.5,
+          "average_precision_ovr_macro": 0.3333333333333333,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              420
+            ],
+            [
+              0,
+              0,
+              5897
+            ],
+            [
+              0,
+              0,
+              24903
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 420,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.013452914798206279,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.013452914798206279
+            },
+            "Serious": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5897,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.18888532991672005,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.18888532991672005
+            },
+            "Slight": {
+              "precision": 0.7976617552850737,
+              "recall": 1.0,
+              "f1": 0.8874436505532491,
+              "support": 24903,
+              "predicted_count": 31220,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7976617552850737,
+              "roc_auc_ovr": 0.5,
+              "average_precision_ovr": 0.7976617552850737
+            }
+          }
+        }
+      }
+    ],
+    "logistic": [
+      {
+        "fold": 1,
+        "fit_rows": 27636,
+        "validation_rows": 28599,
+        "fit_until": "2019-03-31T23:20:00",
+        "validation_from": "2019-04-01T00:01:00",
+        "fit_seconds": 2.568176600150764,
+        "pipeline": {
+          "fit_rows": 27636,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": [
+            559
+          ]
+        },
+        "metrics": {
+          "rows": 28599,
+          "accuracy": 0.7869156264205042,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.29358432477562096,
+          "weighted_f1": 0.6930782785141455,
+          "log_loss": 0.5531823207921517,
+          "multiclass_brier": 0.3339211954223197,
+          "roc_auc_ovr_macro": 0.6472365342695643,
+          "average_precision_ovr_macro": 0.38044926768474796,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              374
+            ],
+            [
+              0,
+              0,
+              5720
+            ],
+            [
+              0,
+              0,
+              22505
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 374,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.013077380327983496,
+              "roc_auc_ovr": 0.7349647835621889,
+              "average_precision_ovr": 0.03933211194091343
+            },
+            "Serious": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5720,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.20000699325151228,
+              "roc_auc_ovr": 0.5964009923596225,
+              "average_precision_ovr": 0.25681475511416113
+            },
+            "Slight": {
+              "precision": 0.7869156264205042,
+              "recall": 1.0,
+              "f1": 0.8807529743268628,
+              "support": 22505,
+              "predicted_count": 28599,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7869156264205042,
+              "roc_auc_ovr": 0.6103438268868815,
+              "average_precision_ovr": 0.8452009359991693
+            }
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "fit_rows": 56235,
+        "validation_rows": 30081,
+        "fit_until": "2019-06-30T23:45:00",
+        "validation_from": "2019-07-01T00:22:00",
+        "fit_seconds": 5.709441899787635,
+        "pipeline": {
+          "fit_rows": 56235,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": [
+            654
+          ]
+        },
+        "metrics": {
+          "rows": 30081,
+          "accuracy": 0.7771683122236628,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.2915380634380242,
+          "weighted_f1": 0.6797224341332531,
+          "log_loss": 0.5684838454296608,
+          "multiclass_brier": 0.34530570505779096,
+          "roc_auc_ovr_macro": 0.6573835585764626,
+          "average_precision_ovr_macro": 0.38467692936283493,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              442
+            ],
+            [
+              0,
+              0,
+              6261
+            ],
+            [
+              0,
+              0,
+              23378
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 442,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.014693660450118015,
+              "roc_auc_ovr": 0.7671906847694712,
+              "average_precision_ovr": 0.04853308026817159
+            },
+            "Serious": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6261,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.20813802732621922,
+              "roc_auc_ovr": 0.5947215218595624,
+              "average_precision_ovr": 0.26724133988514065
+            },
+            "Slight": {
+              "precision": 0.7771683122236628,
+              "recall": 1.0,
+              "f1": 0.8746141903140725,
+              "support": 23378,
+              "predicted_count": 30081,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7771683122236628,
+              "roc_auc_ovr": 0.6102384691003541,
+              "average_precision_ovr": 0.8382563679351924
+            }
+          }
+        }
+      },
+      {
+        "fold": 3,
+        "fit_rows": 86316,
+        "validation_rows": 31220,
+        "fit_until": "2019-09-30T23:50:00",
+        "validation_from": "2019-10-01T00:01:00",
+        "fit_seconds": 10.23006059997715,
+        "pipeline": {
+          "fit_rows": 86316,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": [
+            734
+          ]
+        },
+        "metrics": {
+          "rows": 31220,
+          "accuracy": 0.7976617552850737,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.2958145501844164,
+          "weighted_f1": 0.7078798600168982,
+          "log_loss": 0.5405456125159701,
+          "multiclass_brier": 0.322110255204814,
+          "roc_auc_ovr_macro": 0.6372121505024212,
+          "average_precision_ovr_macro": 0.3758768842024674,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              420
+            ],
+            [
+              0,
+              0,
+              5897
+            ],
+            [
+              0,
+              0,
+              24903
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 420,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.013452914798206279,
+              "roc_auc_ovr": 0.722058170995671,
+              "average_precision_ovr": 0.03636420081536686
+            },
+            "Serious": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5897,
+              "predicted_count": 0,
+              "precision_defined": false,
+              "recall_defined": true,
+              "prevalence": 0.18888532991672005,
+              "roc_auc_ovr": 0.5887761694287121,
+              "average_precision_ovr": 0.23961506326701143
+            },
+            "Slight": {
+              "precision": 0.7976617552850737,
+              "recall": 1.0,
+              "f1": 0.8874436505532491,
+              "support": 24903,
+              "predicted_count": 31220,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7976617552850737,
+              "roc_auc_ovr": 0.6008021110828806,
+              "average_precision_ovr": 0.8516513885250241
+            }
+          }
+        }
+      }
+    ],
+    "logistic_balanced": [
+      {
+        "fold": 1,
+        "fit_rows": 27636,
+        "validation_rows": 28599,
+        "fit_until": "2019-03-31T23:20:00",
+        "validation_from": "2019-04-01T00:01:00",
+        "fit_seconds": 3.708318999968469,
+        "pipeline": {
+          "fit_rows": 27636,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": [
+            819
+          ]
+        },
+        "metrics": {
+          "rows": 28599,
+          "accuracy": 0.5169061855309626,
+          "balanced_accuracy": 0.4490025214318509,
+          "macro_f1": 0.3430797259268254,
+          "weighted_f1": 0.578843151402577,
+          "log_loss": 0.9044864125452856,
+          "multiclass_brier": 0.5562347983047102,
+          "roc_auc_ovr_macro": 0.6145944345592758,
+          "average_precision_ovr_macro": 0.3607910513246643,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              144,
+              151,
+              79
+            ],
+            [
+              990,
+              2389,
+              2341
+            ],
+            [
+              2390,
+              7865,
+              12250
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.04086265607264472,
+              "recall": 0.3850267379679144,
+              "f1": 0.07388404309902515,
+              "support": 374,
+              "predicted_count": 3524,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.013077380327983496,
+              "roc_auc_ovr": 0.7309728925792074,
+              "average_precision_ovr": 0.038236085995789454
+            },
+            "Serious": {
+              "precision": 0.22960115329168668,
+              "recall": 0.41765734265734267,
+              "f1": 0.2963100775193798,
+              "support": 5720,
+              "predicted_count": 10405,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.20000699325151228,
+              "roc_auc_ovr": 0.5043991963497843,
+              "average_precision_ovr": 0.199535733727783
+            },
+            "Slight": {
+              "precision": 0.8350374914792092,
+              "recall": 0.5443234836702955,
+              "f1": 0.6590450571620713,
+              "support": 22505,
+              "predicted_count": 14670,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7869156264205042,
+              "roc_auc_ovr": 0.6084112147488356,
+              "average_precision_ovr": 0.8446013342504204
+            }
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "fit_rows": 56235,
+        "validation_rows": 30081,
+        "fit_until": "2019-06-30T23:45:00",
+        "validation_from": "2019-07-01T00:22:00",
+        "fit_seconds": 9.27744899992831,
+        "pipeline": {
+          "fit_rows": 56235,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": [
+            1014
+          ]
+        },
+        "metrics": {
+          "rows": 30081,
+          "accuracy": 0.5212925102223995,
+          "balanced_accuracy": 0.48072469980056104,
+          "macro_f1": 0.3253472600731905,
+          "weighted_f1": 0.5874927560461987,
+          "log_loss": 0.9935803029957344,
+          "multiclass_brier": 0.603992288101967,
+          "roc_auc_ovr_macro": 0.623480647316222,
+          "average_precision_ovr_macro": 0.36346657950603567,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              286,
+              63,
+              93
+            ],
+            [
+              2097,
+              1168,
+              2996
+            ],
+            [
+              5350,
+              3801,
+              14227
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.03698435277382646,
+              "recall": 0.6470588235294118,
+              "f1": 0.06996941896024465,
+              "support": 442,
+              "predicted_count": 7733,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.014693660450118015,
+              "roc_auc_ovr": 0.7620345976218504,
+              "average_precision_ovr": 0.045267617991442674
+            },
+            "Serious": {
+              "precision": 0.23211446740858505,
+              "recall": 0.18655166906245008,
+              "f1": 0.2068538032409457,
+              "support": 6261,
+              "predicted_count": 5032,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.20813802732621922,
+              "roc_auc_ovr": 0.5040391748473987,
+              "average_precision_ovr": 0.20959371507149951
+            },
+            "Slight": {
+              "precision": 0.8216100716100716,
+              "recall": 0.6085636068098212,
+              "f1": 0.6992185580183811,
+              "support": 23378,
+              "predicted_count": 17316,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7771683122236628,
+              "roc_auc_ovr": 0.604368169479417,
+              "average_precision_ovr": 0.8355384054551649
+            }
+          }
+        }
+      },
+      {
+        "fold": 3,
+        "fit_rows": 86316,
+        "validation_rows": 31220,
+        "fit_until": "2019-09-30T23:50:00",
+        "validation_from": "2019-10-01T00:01:00",
+        "fit_seconds": 15.707439000019804,
+        "pipeline": {
+          "fit_rows": 86316,
+          "speed_median_mph": 30.0,
+          "feature_count": 63,
+          "feature_names": [
+            "speed__speed_limit",
+            "cycles__hour_sin",
+            "cycles__hour_cos",
+            "cycles__weekday_sin",
+            "cycles__weekday_cos",
+            "cycles__month_sin",
+            "cycles__month_cos",
+            "missing__speed_limit_missing",
+            "categories__weather_conditions_Fine + high winds",
+            "categories__weather_conditions_Fine no high winds",
+            "categories__weather_conditions_Fog or mist",
+            "categories__weather_conditions_Other",
+            "categories__weather_conditions_Raining + high winds",
+            "categories__weather_conditions_Raining no high winds",
+            "categories__weather_conditions_Snowing + high winds",
+            "categories__weather_conditions_Snowing no high winds",
+            "categories__weather_conditions___unknown__",
+            "categories__road_surface_conditions_Dry",
+            "categories__road_surface_conditions_Flood over 3cm. deep",
+            "categories__road_surface_conditions_Frost or ice",
+            "categories__road_surface_conditions_Snow",
+            "categories__road_surface_conditions_Wet or damp",
+            "categories__road_surface_conditions___missing__",
+            "categories__road_surface_conditions___unknown__",
+            "categories__light_conditions_Darkness - lighting unknown",
+            "categories__light_conditions_Darkness - lights lit",
+            "categories__light_conditions_Darkness - lights unlit",
+            "categories__light_conditions_Darkness - no lighting",
+            "categories__light_conditions_Daylight",
+            "categories__light_conditions___missing__",
+            "categories__road_type_Dual carriageway",
+            "categories__road_type_One way street",
+            "categories__road_type_Roundabout",
+            "categories__road_type_Single carriageway",
+            "categories__road_type_Slip road",
+            "categories__road_type___unknown__",
+            "categories__junction_detail_historic_Crossroads",
+            "categories__junction_detail_historic_Mini-roundabout",
+            "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+            "categories__junction_detail_historic_Not at junction or within 20 metres",
+            "categories__junction_detail_historic_Other junction",
+            "categories__junction_detail_historic_Private drive or entrance",
+            "categories__junction_detail_historic_Roundabout",
+            "categories__junction_detail_historic_Slip road",
+            "categories__junction_detail_historic_T or staggered junction",
+            "categories__junction_detail_historic___missing__",
+            "categories__junction_detail_historic___unknown__",
+            "categories__junction_control_Authorised person",
+            "categories__junction_control_Auto traffic signal",
+            "categories__junction_control_Give way or uncontrolled",
+            "categories__junction_control_Stop sign",
+            "categories__junction_control___missing__",
+            "categories__junction_control___not_applicable__",
+            "categories__junction_control___unknown__",
+            "categories__urban_or_rural_area_Rural",
+            "categories__urban_or_rural_area_Urban",
+            "categories__urban_or_rural_area___unknown__",
+            "categories__first_road_class_A",
+            "categories__first_road_class_A(M)",
+            "categories__first_road_class_B",
+            "categories__first_road_class_C",
+            "categories__first_road_class_Motorway",
+            "categories__first_road_class_Unclassified"
+          ],
+          "classes": [
+            0,
+            1,
+            2
+          ],
+          "iterations": [
+            1125
+          ]
+        },
+        "metrics": {
+          "rows": 31220,
+          "accuracy": 0.47261370916079437,
+          "balanced_accuracy": 0.4589872744135762,
+          "macro_f1": 0.30470724500261637,
+          "weighted_f1": 0.560749425749976,
+          "log_loss": 1.060871133635887,
+          "multiclass_brier": 0.6452837744433504,
+          "roc_auc_ovr_macro": 0.6068841240545572,
+          "average_precision_ovr_macro": 0.3585566629095886,
+          "labels": [
+            "Fatal",
+            "Serious",
+            "Slight"
+          ],
+          "confusion_matrix": [
+            [
+              269,
+              59,
+              92
+            ],
+            [
+              2255,
+              1196,
+              2446
+            ],
+            [
+              7330,
+              4283,
+              13290
+            ]
+          ],
+          "per_class": {
+            "Fatal": {
+              "precision": 0.02729855896082809,
+              "recall": 0.6404761904761904,
+              "f1": 0.05236519369281682,
+              "support": 420,
+              "predicted_count": 9854,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.013452914798206279,
+              "roc_auc_ovr": 0.7192496521335807,
+              "average_precision_ovr": 0.03235043457329698
+            },
+            "Serious": {
+              "precision": 0.215962441314554,
+              "recall": 0.20281499067322367,
+              "f1": 0.20918233493659816,
+              "support": 5897,
+              "predicted_count": 5538,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.18888532991672005,
+              "roc_auc_ovr": 0.50655978882062,
+              "average_precision_ovr": 0.19334543700332507
+            },
+            "Slight": {
+              "precision": 0.8396512509476877,
+              "recall": 0.5336706420913143,
+              "f1": 0.6525742063784341,
+              "support": 24903,
+              "predicted_count": 15828,
+              "precision_defined": true,
+              "recall_defined": true,
+              "prevalence": 0.7976617552850737,
+              "roc_auc_ovr": 0.5948429312094707,
+              "average_precision_ovr": 0.8499741171521437
+            }
+          }
+        }
+      }
+    ]
+  },
+  "cv_summary": {
+    "dummy_prior": {
+      "accuracy_mean": 0.7872485646430802,
+      "accuracy_std": 0.010250777435046644,
+      "macro_f1_mean": 0.2936456461326872,
+      "macro_f1_std": 0.002138902745484552,
+      "balanced_accuracy_mean": 0.3333333333333333,
+      "balanced_accuracy_std": 0.0,
+      "log_loss_mean": 0.5689623535517967,
+      "log_loss_std": 0.01603351655826642,
+      "average_precision_ovr_macro_mean": 0.3333333333333333,
+      "average_precision_ovr_macro_std": 0.0,
+      "roc_auc_ovr_macro_mean": 0.5,
+      "roc_auc_ovr_macro_std": 0.0
+    },
+    "logistic": {
+      "accuracy_mean": 0.7872485646430802,
+      "accuracy_std": 0.010250777435046644,
+      "macro_f1_mean": 0.2936456461326872,
+      "macro_f1_std": 0.002138902745484552,
+      "balanced_accuracy_mean": 0.3333333333333333,
+      "balanced_accuracy_std": 0.0,
+      "log_loss_mean": 0.5540705929125943,
+      "log_loss_std": 0.01399028180934444,
+      "average_precision_ovr_macro_mean": 0.3803343604166834,
+      "average_precision_ovr_macro_std": 0.004401147744204635,
+      "roc_auc_ovr_macro_mean": 0.6472774144494826,
+      "roc_auc_ovr_macro_std": 0.010085766173881294
+    },
+    "logistic_balanced": {
+      "accuracy_mean": 0.5036041349713855,
+      "accuracy_std": 0.02692795629111113,
+      "macro_f1_mean": 0.3243780770008774,
+      "macro_f1_std": 0.0192045908558459,
+      "balanced_accuracy_mean": 0.462904831881996,
+      "balanced_accuracy_std": 0.01621988262913283,
+      "log_loss_mean": 0.9863126163923024,
+      "log_loss_std": 0.07844526562559764,
+      "average_precision_ovr_macro_mean": 0.36093809791342957,
+      "average_precision_ovr_macro_std": 0.002458258991739319,
+      "roc_auc_ovr_macro_mean": 0.614986401976685,
+      "roc_auc_ovr_macro_std": 0.008305201679428277
+    }
+  },
+  "results": {
+    "dummy_prior": {
+      "train": {
+        "rows": 117536,
+        "accuracy": 0.7903791178872855,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.29430605320433006,
+        "weighted_f1": 0.6978400761615808,
+        "log_loss": 0.5651429966081275,
+        "multiclass_brier": 0.33687591642595555,
+        "roc_auc_ovr_macro": 0.5,
+        "average_precision_ovr_macro": 0.3333333333333333,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1658
+          ],
+          [
+            0,
+            0,
+            22980
+          ],
+          [
+            0,
+            0,
+            92898
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1658,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.014106316362646339,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.014106316362646339
+          },
+          "Serious": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 22980,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.19551456575006806,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.19551456575006806
+          },
+          "Slight": {
+            "precision": 0.7903791178872855,
+            "recall": 1.0,
+            "f1": 0.8829181596129902,
+            "support": 92898,
+            "predicted_count": 117536,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7903791178872855,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.7903791178872855
+          }
+        }
+      },
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.7834844680314477,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.2928665699366336,
+        "weighted_f1": 0.6883692262529946,
+        "log_loss": 0.5777869435475712,
+        "multiclass_brier": 0.34549448564417334,
+        "roc_auc_ovr_macro": 0.5,
+        "average_precision_ovr_macro": 0.3333333333333333,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1391
+          ],
+          [
+            0,
+            0,
+            18355
+          ],
+          [
+            0,
+            0,
+            71453
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1391,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.015252360223248062
+          },
+          "Serious": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 18355,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.20126317174530423
+          },
+          "Slight": {
+            "precision": 0.7834844680314477,
+            "recall": 1.0,
+            "f1": 0.8785997098099009,
+            "support": 71453,
+            "predicted_count": 91199,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.7834844680314477
+          }
+        }
+      },
+      "fit_seconds": 1.2215068999212235,
+      "inference_batch_size": 128,
+      "inference_batch_median_ms": 27.528999838978052,
+      "artifact_bytes": 9771,
+      "pipeline": {
+        "fit_rows": 117536,
+        "speed_median_mph": 30.0,
+        "feature_count": 63,
+        "feature_names": [
+          "speed__speed_limit",
+          "cycles__hour_sin",
+          "cycles__hour_cos",
+          "cycles__weekday_sin",
+          "cycles__weekday_cos",
+          "cycles__month_sin",
+          "cycles__month_cos",
+          "missing__speed_limit_missing",
+          "categories__weather_conditions_Fine + high winds",
+          "categories__weather_conditions_Fine no high winds",
+          "categories__weather_conditions_Fog or mist",
+          "categories__weather_conditions_Other",
+          "categories__weather_conditions_Raining + high winds",
+          "categories__weather_conditions_Raining no high winds",
+          "categories__weather_conditions_Snowing + high winds",
+          "categories__weather_conditions_Snowing no high winds",
+          "categories__weather_conditions___unknown__",
+          "categories__road_surface_conditions_Dry",
+          "categories__road_surface_conditions_Flood over 3cm. deep",
+          "categories__road_surface_conditions_Frost or ice",
+          "categories__road_surface_conditions_Snow",
+          "categories__road_surface_conditions_Wet or damp",
+          "categories__road_surface_conditions___missing__",
+          "categories__road_surface_conditions___unknown__",
+          "categories__light_conditions_Darkness - lighting unknown",
+          "categories__light_conditions_Darkness - lights lit",
+          "categories__light_conditions_Darkness - lights unlit",
+          "categories__light_conditions_Darkness - no lighting",
+          "categories__light_conditions_Daylight",
+          "categories__light_conditions___missing__",
+          "categories__road_type_Dual carriageway",
+          "categories__road_type_One way street",
+          "categories__road_type_Roundabout",
+          "categories__road_type_Single carriageway",
+          "categories__road_type_Slip road",
+          "categories__road_type___unknown__",
+          "categories__junction_detail_historic_Crossroads",
+          "categories__junction_detail_historic_Mini-roundabout",
+          "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+          "categories__junction_detail_historic_Not at junction or within 20 metres",
+          "categories__junction_detail_historic_Other junction",
+          "categories__junction_detail_historic_Private drive or entrance",
+          "categories__junction_detail_historic_Roundabout",
+          "categories__junction_detail_historic_Slip road",
+          "categories__junction_detail_historic_T or staggered junction",
+          "categories__junction_detail_historic___missing__",
+          "categories__junction_detail_historic___unknown__",
+          "categories__junction_control_Authorised person",
+          "categories__junction_control_Auto traffic signal",
+          "categories__junction_control_Give way or uncontrolled",
+          "categories__junction_control_Stop sign",
+          "categories__junction_control___missing__",
+          "categories__junction_control___not_applicable__",
+          "categories__junction_control___unknown__",
+          "categories__urban_or_rural_area_Rural",
+          "categories__urban_or_rural_area_Urban",
+          "categories__urban_or_rural_area___unknown__",
+          "categories__first_road_class_A",
+          "categories__first_road_class_A(M)",
+          "categories__first_road_class_B",
+          "categories__first_road_class_C",
+          "categories__first_road_class_Motorway",
+          "categories__first_road_class_Unclassified"
+        ],
+        "classes": [
+          0,
+          1,
+          2
+        ],
+        "iterations": []
+      },
+      "training_class_weights": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "parameters": {
+        "constant": null,
+        "random_state": 42,
+        "strategy": "prior"
+      }
+    },
+    "logistic": {
+      "train": {
+        "rows": 117536,
+        "accuracy": 0.7903791178872855,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.29430605320433006,
+        "weighted_f1": 0.6978400761615808,
+        "log_loss": 0.5488387041269954,
+        "multiclass_brier": 0.32936112422739244,
+        "roc_auc_ovr_macro": 0.6501239458400038,
+        "average_precision_ovr_macro": 0.38266646156903,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1658
+          ],
+          [
+            0,
+            0,
+            22980
+          ],
+          [
+            0,
+            0,
+            92898
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1658,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.014106316362646339,
+            "roc_auc_ovr": 0.7445415169912385,
+            "average_precision_ovr": 0.04444114525579983
+          },
+          "Serious": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 22980,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.19551456575006806,
+            "roc_auc_ovr": 0.5967771657438249,
+            "average_precision_ovr": 0.25516275334852606
+          },
+          "Slight": {
+            "precision": 0.7903791178872855,
+            "recall": 1.0,
+            "f1": 0.8829181596129902,
+            "support": 92898,
+            "predicted_count": 117536,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7903791178872855,
+            "roc_auc_ovr": 0.609053154784948,
+            "average_precision_ovr": 0.848395486102764
+          }
+        }
+      },
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.7834844680314477,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.2928665699366336,
+        "weighted_f1": 0.6883692262529946,
+        "log_loss": 0.5611237420638163,
+        "multiclass_brier": 0.33772296284225095,
+        "roc_auc_ovr_macro": 0.6481900919036288,
+        "average_precision_ovr_macro": 0.38531687879459464,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1391
+          ],
+          [
+            0,
+            0,
+            18355
+          ],
+          [
+            0,
+            0,
+            71453
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1391,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7399202730822961,
+            "average_precision_ovr": 0.053878561359287404
+          },
+          "Serious": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 18355,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5949278487841778,
+            "average_precision_ovr": 0.25914235545516356
+          },
+          "Slight": {
+            "precision": 0.7834844680314477,
+            "recall": 1.0,
+            "f1": 0.8785997098099009,
+            "support": 71453,
+            "predicted_count": 91199,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6097221538444123,
+            "average_precision_ovr": 0.8429297195693329
+          }
+        }
+      },
+      "fit_seconds": 17.16138039994985,
+      "inference_batch_size": 128,
+      "inference_batch_median_ms": 23.05669989436865,
+      "artifact_bytes": 11634,
+      "pipeline": {
+        "fit_rows": 117536,
+        "speed_median_mph": 30.0,
+        "feature_count": 63,
+        "feature_names": [
+          "speed__speed_limit",
+          "cycles__hour_sin",
+          "cycles__hour_cos",
+          "cycles__weekday_sin",
+          "cycles__weekday_cos",
+          "cycles__month_sin",
+          "cycles__month_cos",
+          "missing__speed_limit_missing",
+          "categories__weather_conditions_Fine + high winds",
+          "categories__weather_conditions_Fine no high winds",
+          "categories__weather_conditions_Fog or mist",
+          "categories__weather_conditions_Other",
+          "categories__weather_conditions_Raining + high winds",
+          "categories__weather_conditions_Raining no high winds",
+          "categories__weather_conditions_Snowing + high winds",
+          "categories__weather_conditions_Snowing no high winds",
+          "categories__weather_conditions___unknown__",
+          "categories__road_surface_conditions_Dry",
+          "categories__road_surface_conditions_Flood over 3cm. deep",
+          "categories__road_surface_conditions_Frost or ice",
+          "categories__road_surface_conditions_Snow",
+          "categories__road_surface_conditions_Wet or damp",
+          "categories__road_surface_conditions___missing__",
+          "categories__road_surface_conditions___unknown__",
+          "categories__light_conditions_Darkness - lighting unknown",
+          "categories__light_conditions_Darkness - lights lit",
+          "categories__light_conditions_Darkness - lights unlit",
+          "categories__light_conditions_Darkness - no lighting",
+          "categories__light_conditions_Daylight",
+          "categories__light_conditions___missing__",
+          "categories__road_type_Dual carriageway",
+          "categories__road_type_One way street",
+          "categories__road_type_Roundabout",
+          "categories__road_type_Single carriageway",
+          "categories__road_type_Slip road",
+          "categories__road_type___unknown__",
+          "categories__junction_detail_historic_Crossroads",
+          "categories__junction_detail_historic_Mini-roundabout",
+          "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+          "categories__junction_detail_historic_Not at junction or within 20 metres",
+          "categories__junction_detail_historic_Other junction",
+          "categories__junction_detail_historic_Private drive or entrance",
+          "categories__junction_detail_historic_Roundabout",
+          "categories__junction_detail_historic_Slip road",
+          "categories__junction_detail_historic_T or staggered junction",
+          "categories__junction_detail_historic___missing__",
+          "categories__junction_detail_historic___unknown__",
+          "categories__junction_control_Authorised person",
+          "categories__junction_control_Auto traffic signal",
+          "categories__junction_control_Give way or uncontrolled",
+          "categories__junction_control_Stop sign",
+          "categories__junction_control___missing__",
+          "categories__junction_control___not_applicable__",
+          "categories__junction_control___unknown__",
+          "categories__urban_or_rural_area_Rural",
+          "categories__urban_or_rural_area_Urban",
+          "categories__urban_or_rural_area___unknown__",
+          "categories__first_road_class_A",
+          "categories__first_road_class_A(M)",
+          "categories__first_road_class_B",
+          "categories__first_road_class_C",
+          "categories__first_road_class_Motorway",
+          "categories__first_road_class_Unclassified"
+        ],
+        "classes": [
+          0,
+          1,
+          2
+        ],
+        "iterations": [
+          961
+        ]
+      },
+      "training_class_weights": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "parameters": {
+        "C": 1.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 2000,
+        "multi_class": "deprecated",
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 1e-06,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    "logistic_balanced": {
+      "train": {
+        "rows": 117536,
+        "accuracy": 0.4716512387693983,
+        "balanced_accuracy": 0.47464798476156417,
+        "macro_f1": 0.31552202757177084,
+        "weighted_f1": 0.5542023487272111,
+        "log_loss": 1.0236975662613437,
+        "multiclass_brier": 0.6232513663181497,
+        "roc_auc_ovr_macro": 0.6189195785217795,
+        "average_precision_ovr_macro": 0.36397672411442317,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            1047,
+            276,
+            335
+          ],
+          [
+            7752,
+            6320,
+            8908
+          ],
+          [
+            22311,
+            22518,
+            48069
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.03365477338476374,
+            "recall": 0.6314837153196623,
+            "f1": 0.06390380859375,
+            "support": 1658,
+            "predicted_count": 31110,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.014106316362646339,
+            "roc_auc_ovr": 0.7446598405531578,
+            "average_precision_ovr": 0.04381485426113911
+          },
+          "Serious": {
+            "precision": 0.21707769457992718,
+            "recall": 0.2750217580504787,
+            "f1": 0.24263830767458824,
+            "support": 22980,
+            "predicted_count": 29114,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.19551456575006806,
+            "roc_auc_ovr": 0.5097001918010946,
+            "average_precision_ovr": 0.2021968123286924
+          },
+          "Slight": {
+            "precision": 0.8387248743718593,
+            "recall": 0.5174384809145515,
+            "f1": 0.6400239664469742,
+            "support": 92898,
+            "predicted_count": 57312,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7903791178872855,
+            "roc_auc_ovr": 0.6023987032110862,
+            "average_precision_ovr": 0.845918505753438
+          }
+        }
+      },
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.4746981874801259,
+        "balanced_accuracy": 0.4721132104478292,
+        "macro_f1": 0.3192636080805817,
+        "weighted_f1": 0.5543373639769882,
+        "log_loss": 1.0208149035314056,
+        "multiclass_brier": 0.6212638230187789,
+        "roc_auc_ovr_macro": 0.6153929538397896,
+        "average_precision_ovr_macro": 0.36580894453338636,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            859,
+            262,
+            270
+          ],
+          [
+            6138,
+            5062,
+            7155
+          ],
+          [
+            16640,
+            17442,
+            37371
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.03634132927190422,
+            "recall": 0.6175413371675054,
+            "f1": 0.06864311970592936,
+            "support": 1391,
+            "predicted_count": 23637,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7368996186192498,
+            "average_precision_ovr": 0.05108254192313218
+          },
+          "Serious": {
+            "precision": 0.222349117104454,
+            "recall": 0.2757831653500409,
+            "f1": 0.2462002383210525,
+            "support": 18355,
+            "predicted_count": 22766,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5038649165991063,
+            "average_precision_ovr": 0.20532626052633418
+          },
+          "Slight": {
+            "precision": 0.8342485936244307,
+            "recall": 0.5230151288259415,
+            "f1": 0.6429474662147632,
+            "support": 71453,
+            "predicted_count": 44796,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6054143263010128,
+            "average_precision_ovr": 0.8410180311506927
+          }
+        }
+      },
+      "fit_seconds": 23.23741879989393,
+      "inference_batch_size": 128,
+      "inference_batch_median_ms": 23.200999945402145,
+      "artifact_bytes": 11640,
+      "pipeline": {
+        "fit_rows": 117536,
+        "speed_median_mph": 30.0,
+        "feature_count": 63,
+        "feature_names": [
+          "speed__speed_limit",
+          "cycles__hour_sin",
+          "cycles__hour_cos",
+          "cycles__weekday_sin",
+          "cycles__weekday_cos",
+          "cycles__month_sin",
+          "cycles__month_cos",
+          "missing__speed_limit_missing",
+          "categories__weather_conditions_Fine + high winds",
+          "categories__weather_conditions_Fine no high winds",
+          "categories__weather_conditions_Fog or mist",
+          "categories__weather_conditions_Other",
+          "categories__weather_conditions_Raining + high winds",
+          "categories__weather_conditions_Raining no high winds",
+          "categories__weather_conditions_Snowing + high winds",
+          "categories__weather_conditions_Snowing no high winds",
+          "categories__weather_conditions___unknown__",
+          "categories__road_surface_conditions_Dry",
+          "categories__road_surface_conditions_Flood over 3cm. deep",
+          "categories__road_surface_conditions_Frost or ice",
+          "categories__road_surface_conditions_Snow",
+          "categories__road_surface_conditions_Wet or damp",
+          "categories__road_surface_conditions___missing__",
+          "categories__road_surface_conditions___unknown__",
+          "categories__light_conditions_Darkness - lighting unknown",
+          "categories__light_conditions_Darkness - lights lit",
+          "categories__light_conditions_Darkness - lights unlit",
+          "categories__light_conditions_Darkness - no lighting",
+          "categories__light_conditions_Daylight",
+          "categories__light_conditions___missing__",
+          "categories__road_type_Dual carriageway",
+          "categories__road_type_One way street",
+          "categories__road_type_Roundabout",
+          "categories__road_type_Single carriageway",
+          "categories__road_type_Slip road",
+          "categories__road_type___unknown__",
+          "categories__junction_detail_historic_Crossroads",
+          "categories__junction_detail_historic_Mini-roundabout",
+          "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+          "categories__junction_detail_historic_Not at junction or within 20 metres",
+          "categories__junction_detail_historic_Other junction",
+          "categories__junction_detail_historic_Private drive or entrance",
+          "categories__junction_detail_historic_Roundabout",
+          "categories__junction_detail_historic_Slip road",
+          "categories__junction_detail_historic_T or staggered junction",
+          "categories__junction_detail_historic___missing__",
+          "categories__junction_detail_historic___unknown__",
+          "categories__junction_control_Authorised person",
+          "categories__junction_control_Auto traffic signal",
+          "categories__junction_control_Give way or uncontrolled",
+          "categories__junction_control_Stop sign",
+          "categories__junction_control___missing__",
+          "categories__junction_control___not_applicable__",
+          "categories__junction_control___unknown__",
+          "categories__urban_or_rural_area_Rural",
+          "categories__urban_or_rural_area_Urban",
+          "categories__urban_or_rural_area___unknown__",
+          "categories__first_road_class_A",
+          "categories__first_road_class_A(M)",
+          "categories__first_road_class_B",
+          "categories__first_road_class_C",
+          "categories__first_road_class_Motorway",
+          "categories__first_road_class_Unclassified"
+        ],
+        "classes": [
+          0,
+          1,
+          2
+        ],
+        "iterations": [
+          1239
+        ]
+      },
+      "training_class_weights": {
+        "0": 23.630076397265782,
+        "1": 1.7049028140411953,
+        "2": 0.42173853760755525
+      },
+      "parameters": {
+        "C": 1.0,
+        "class_weight": "balanced",
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 2000,
+        "multi_class": "deprecated",
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 1e-06,
+        "verbose": 0,
+        "warm_start": false
+      }
+    }
+  },
+  "input_manifest": [
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2019.csv",
+      "bytes": 23524706,
+      "sha256": "729806fc1849bbf27ad305a9616c69583e91baf00c326b68e7de9876baa9d558"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2019.csv",
+      "bytes": 23953229,
+      "sha256": "06abaed875713ca4310adb0dd5f3a03a168bc2a55ca63af4a45e9677a229e329"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2019.csv",
+      "bytes": 13468675,
+      "sha256": "a286856211693a31b45b8d414ddd82d6b51e7ffa27b6334662abfd9f82b9612d"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2020.csv",
+      "bytes": 18228231,
+      "sha256": "851b53f39d503130240a918b0ca51a9da2f667fd4e25189fc3cea220793c68f5"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2020.csv",
+      "bytes": 18553536,
+      "sha256": "415fa554e4da1d5ec5965b6e4874b3d54791f91ba28373b1d6fa4c92e8b81ff3"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2020.csv",
+      "bytes": 10149317,
+      "sha256": "05a1a6111dc9aa820e650eb1f3474085ca81b0353359a38b6b8235757fe39da8"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2021.csv",
+      "bytes": 19208797,
+      "sha256": "e729a3276859120261c616cbc0ac4ac7be034a608895928c41c765b3e3749ba9"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2021.csv",
+      "bytes": 20519491,
+      "sha256": "80d3c8eea4547d9014ef3ce7698ae0942907aafefd8576f614c05fc9777f6d13"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2021.csv",
+      "bytes": 10674693,
+      "sha256": "272c04fae888c1b09447e55db211c9af43a003a42cd27b184405bcdde13e4df0"
+    },
+    {
+      "path": "config/stats19_data_guide_2025.xlsx",
+      "bytes": 85112,
+      "sha256": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12"
+    }
+  ],
+  "code_manifest": [
+    {
+      "path": "config/baseline_protocol.json",
+      "bytes": 506,
+      "sha256": "21e613e6055a943f31269e05a39d85cd1b4851acba9f4d5698f40f04af10a402"
+    },
+    {
+      "path": "src/features/preprocessing.py",
+      "bytes": 6909,
+      "sha256": "4d5c54b2770f212b060dd3040085da47063a7635a75dd1cabc47921f2ee972b9"
+    },
+    {
+      "path": "src/data/splits.py",
+      "bytes": 2482,
+      "sha256": "6268062f275b17258a1b91f7325d5dd6d041ba7faab4b4f1cfe769a104c2d090"
+    },
+    {
+      "path": "src/models/baselines.py",
+      "bytes": 1385,
+      "sha256": "eca3067cb97c31ada128a96713720ac55cfda71e48b97617f0894c89bd656042"
+    },
+    {
+      "path": "src/evaluation/classification.py",
+      "bytes": 4141,
+      "sha256": "536c633d28ccbc9ddb485d0c64144ce580d83e7be04c15f685e283246a2b3c81"
+    },
+    {
+      "path": "scripts/train_baselines.py",
+      "bytes": 11636,
+      "sha256": "5200b874f3d4ad33d0e2d0061e261adb141731eceb19bbea7b229a481a5b2d03"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "path": "models/baseline_v1/dummy_prior.joblib",
+      "bytes": 9771,
+      "sha256": "7c9345c5a7eb0d56a6779ef52640e87fbabcf29a8ee34ed269d5c0c3061353e4"
+    },
+    {
+      "path": "models/baseline_v1/logistic.joblib",
+      "bytes": 11634,
+      "sha256": "0f40ab216c5c3fe1513904e4954db6728dc41695617b48dae75488a364cc61fd"
+    },
+    {
+      "path": "models/baseline_v1/logistic_balanced.joblib",
+      "bytes": 11640,
+      "sha256": "f54473af67e6609bd132d10e45895aad39a619666c6d249e29ffe0dd00183b85"
+    },
+    {
+      "path": "models/baseline_v1/selected.joblib",
+      "bytes": 11640,
+      "sha256": "f54473af67e6609bd132d10e45895aad39a619666c6d249e29ffe0dd00183b85"
+    },
+    {
+      "path": "data/processed/baseline_v1/dummy_prior_validation_probabilities.npy",
+      "bytes": 2188904,
+      "sha256": "2a8848fffbc4b5a55a0fecd08acd7d1e8b84d635f0aa21c4a7476dbc734b48e9"
+    },
+    {
+      "path": "data/processed/baseline_v1/logistic_balanced_validation_probabilities.npy",
+      "bytes": 2188904,
+      "sha256": "9c84902a2edb32bffeaeb26916449d6cd50dabe116d317352158252833d13b01"
+    },
+    {
+      "path": "data/processed/baseline_v1/logistic_validation_probabilities.npy",
+      "bytes": 2188904,
+      "sha256": "695a6aac1a893966fd507c5f9f9e2246f0772726d6ec05195ff41f09970bf89d"
+    },
+    {
+      "path": "data/processed/baseline_v1/validation_rows.csv",
+      "bytes": 1904099,
+      "sha256": "8bfa9b706d730a725b073f55e9c078f58ae8f40301d5aa78e7e8f9cb3a22c3a7"
+    },
+    {
+      "path": "data/processed/baseline_v1/validation_targets.npy",
+      "bytes": 729720,
+      "sha256": "0b36faebe3ba3644253ae784ce3eecfc885d1ede49bac8d304c28e6768c08fac"
+    }
+  ],
+  "environment": {
+    "python": "3.11.9",
+    "scikit_learn": "1.7.2",
+    "numpy": "2.2.6",
+    "joblib": "1.5.2",
+    "thread_limit": 1
+  },
+  "checks": {
+    "snapshot_matches_eda": true,
+    "fresh_pipeline_per_cv_fold": true,
+    "training_only_fit_counts": true,
+    "predict_does_not_mutate_fit": true,
+    "aligned_finite_probabilities": true,
+    "no_convergence_warnings": true,
+    "classifier_serialization_round_trip": true,
+    "no_test_scoring": true
+  }
+}

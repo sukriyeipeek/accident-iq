@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f3ef" />
+    <title>AccidentIQ — Severity explorer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <a class="brand" href="#top" aria-label="AccidentIQ home"><span class="brand-mark">A</span> AccidentIQ</a>
+        <span id="api-status" class="status" role="status">Connecting to API…</span>
+      </header>
+
+      <section class="intro" id="top">
+        <p class="eyebrow">TRAFFIC SEVERITY INTELLIGENCE</p>
+        <h1>Explore collision severity.</h1>
+        <p class="lede">Estimate severity for a reported injury collision from its recorded road, weather, light and time context.</p>
+        <p class="scope-note"><strong>Scope:</strong> this model estimates severity conditional on a collision already being reported. It does not estimate whether a collision will occur.</p>
+      </section>
+
+      <section class="workspace" aria-label="Severity prediction">
+        <form id="prediction-form" class="form-card">
+          <div class="card-heading">
+            <div><p class="eyebrow">SCENARIO INPUT</p><h2>Collision context</h2></div>
+            <span class="step-number">01</span>
+          </div>
+          <p class="form-help">Choose the conditions to inspect. Category options use the official STATS19 codebook.</p>
+          <div class="form-grid">
+            <label>Date<input name="date" type="date" value="2020-06-15" required /></label>
+            <label>Local time<input name="time" type="time" value="22:05" required /></label>
+            <label>Posted speed limit<select name="speed_limit"><option value="">Not provided</option><option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option></select></label>
+            <label>Weather<select name="weather_conditions" required><option value="">Loading…</option></select></label>
+            <label>Road surface<select name="road_surface_conditions" required><option value="">Loading…</option></select></label>
+            <label>Light conditions<select name="light_conditions" required><option value="">Loading…</option></select></label>
+            <label>Road type<select name="road_type" required><option value="">Loading…</option></select></label>
+            <label>Junction detail<select name="junction_detail_historic" required><option value="">Loading…</option></select></label>
+            <label>Junction control<select name="junction_control" required><option value="">Loading…</option></select></label>
+            <label>Area<select name="urban_or_rural_area" required><option value="">Loading…</option></select></label>
+            <label class="span-two">First road class<select name="first_road_class" required><option value="">Loading…</option></select></label>
+          </div>
+          <p class="form-help small">Traffic volume and measured visibility are not present in this dataset.</p>
+          <button id="submit-button" type="submit" disabled>Estimate severity <span aria-hidden="true">→</span></button>
+          <p id="error-message" class="error" role="alert" hidden></p>
+        </form>
+
+        <section id="result-card" class="result-card" aria-live="polite" aria-busy="false">
+          <div class="card-heading">
+            <div><p class="eyebrow">MODEL OUTPUT</p><h2>Severity estimate</h2></div>
+            <span class="step-number">02</span>
+          </div>
+          <div class="empty-state" id="empty-state"><span class="empty-orbit">◎</span><p>Your result will appear here.</p><span>Submit a scenario to see class scores and model sensitivity.</span></div>
+          <div id="prediction-result" hidden>
+            <p class="result-label">Predicted severity</p>
+            <h3 id="predicted-severity" class="severity">—</h3>
+            <p class="score-copy">Highest class score <strong id="max-score">—</strong><br /><span>Uncalibrated model score; not an accident-risk probability.</span></p>
+            <div id="class-scores" class="score-list"></div>
+            <div class="factor-heading"><h3>Factors affecting this estimate</h3><span>Local sensitivity</span></div>
+            <p class="form-help small">Each input is compared with a training reference while other inputs stay fixed.</p>
+            <ul id="factor-list" class="factor-list"></ul>
+            <p id="explanation-caveat" class="caveat"></p>
+          </div>
+        </section>
+      </section>
+
+      <footer><span>AccidentIQ · Research prototype</span><span>Not for operational or emergency use</span></footer>
+    </main>
+    <script src="./config.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

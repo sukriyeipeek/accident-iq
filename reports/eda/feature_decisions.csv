@@ -1,0 +1,45 @@
+feature,decision,available_at_prediction,reason
+collision_index,key_only,not a predictor,Record identity; join/audit only
+collision_year,split_only,yes,Temporal split; not a training predictor
+collision_ref_no,key_only,not a predictor,Record identity; join/audit only
+location_easting_osgr,defer_spatial,yes if supplied,Spatial memorization; requires geographic holdout evaluation
+location_northing_osgr,defer_spatial,yes if supplied,Spatial memorization; requires geographic holdout evaluation
+longitude,defer_spatial,yes if supplied,Spatial memorization; requires geographic holdout evaluation
+latitude,defer_spatial,yes if supplied,Spatial memorization; requires geographic holdout evaluation
+police_force,group_audit_only,location-dependent,Recording practice and geographic confounding
+collision_severity,target,after outcome,Reported severity label; never an input
+number_of_vehicles,exclude_v1_context,after collision assessment,Unknown in a prospective environmental scenario
+number_of_casualties,exclude,after outcome,Outcome or reporting process; leakage/proxy risk
+date,candidate,yes if supplied,Derive calendar/cyclic features; do not feed raw timestamp identifiers
+day_of_week,derive_from_date,yes,Validated against date; avoid redundant raw/derived weekday inputs
+time,candidate,yes if supplied,Derive calendar/cyclic features; do not feed raw timestamp identifiers
+local_authority_district,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+local_authority_ons_district,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+local_authority_highway,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+local_authority_highway_current,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+first_road_class,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+first_road_number,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+road_type,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+speed_limit,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+junction_detail_historic,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+junction_detail,exclude_converted_v1,varies,Converted 2024 schema; use source-era context rather than redundant aliases
+junction_control,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+second_road_class,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+second_road_number,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+pedestrian_crossing_human_control_historic,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+pedestrian_crossing_physical_facilities_historic,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+pedestrian_crossing,exclude_converted_v1,varies,Converted 2024 schema; use source-era context rather than redundant aliases
+light_conditions,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+weather_conditions,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+road_surface_conditions,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+special_conditions_at_site,exclude_pending_availability,not guaranteed,Police scene assessment may not be available before outcome
+carriageway_hazards_historic,exclude_pending_availability,not guaranteed,Police scene assessment may not be available before outcome
+carriageway_hazards,exclude_converted_v1,varies,Converted 2024 schema; use source-era context rather than redundant aliases
+urban_or_rural_area,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+did_police_officer_attend_scene_of_accident,exclude,after outcome,Outcome or reporting process; leakage/proxy risk
+trunk_road_flag,candidate,if observed at prediction time,Road/context input; verify deployment source. Nominal codes except speed_limit.
+lsoa_of_accident_location,exclude_v1,varies,Administrative/high-cardinality road/location code; not needed for first context model
+enhanced_severity_collision,exclude,after outcome,Outcome or reporting process; leakage/proxy risk
+collision_injury_based,exclude,after outcome,Outcome or reporting process; leakage/proxy risk
+collision_adjusted_severity_serious,exclude,after outcome,Outcome or reporting process; leakage/proxy risk
+collision_adjusted_severity_slight,exclude,after outcome,Outcome or reporting process; leakage/proxy risk

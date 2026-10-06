@@ -1,0 +1,50 @@
+column,category,n,fraction
+weather_conditions_label,Fine no high winds,92316,0.7854274435066703
+weather_conditions_label,Raining no high winds,15294,0.13012183501225155
+weather_conditions_label,Unknown,3436,0.029233596515110264
+weather_conditions_label,Other,3043,0.025889940103457663
+weather_conditions_label,Raining + high winds,1430,0.012166485161992922
+weather_conditions_label,Fine + high winds,1230,0.010464878845630275
+weather_conditions_label,Fog or mist,394,0.003352164443234413
+weather_conditions_label,Snowing no high winds,353,0.0030033351483800706
+weather_conditions_label,Snowing + high winds,40,0.00034032126327252925
+road_surface_conditions_label,Dry,82321,0.7003896678464471
+road_surface_conditions_label,Wet or damp,32259,0.27446059079771307
+road_surface_conditions_label,Frost or ice,1185,0.01008201742444868
+road_surface_conditions_label,unknown (self reported),1050,0.008933433160903894
+road_surface_conditions_label,Data missing or out of range,299,0.0025439014429621564
+road_surface_conditions_label,Snow,245,0.002084467737544242
+road_surface_conditions_label,Flood over 3cm. deep,177,0.001505921589980942
+light_conditions_label,Daylight,83511,0.7105142254288048
+light_conditions_label,Darkness - lights lit,24407,0.20765552681731556
+light_conditions_label,Darkness - no lighting,6092,0.051830928396406205
+light_conditions_label,Darkness - lighting unknown,2634,0.022410155186496052
+light_conditions_label,Darkness - lights unlit,891,0.0075806561393955895
+light_conditions_label,Data missing or out of range,1,8.508031581813232e-06
+road_type_label,Single carriageway,85320,0.725905254560305
+road_type_label,Dual carriageway,18590,0.15816430710590798
+road_type_label,Roundabout,6880,0.058535257282875036
+road_type_label,One way street,2664,0.02266539613395045
+road_type_label,Unknown,2143,0.018232711679825757
+road_type_label,Slip road,1939,0.016497073237135857
+junction_detail_historic_label,Not at junction or within 20 metres,48993,0.41683399128777565
+junction_detail_historic_label,T or staggered junction,33660,0.28638034304383336
+junction_detail_historic_label,Crossroads,11221,0.09546862237952627
+junction_detail_historic_label,Roundabout,9183,0.0781292540157909
+junction_detail_historic_label,Other junction,5666,0.04820650694255377
+junction_detail_historic_label,Private drive or entrance,2722,0.023158861965695617
+junction_detail_historic_label,Mini-roundabout,1664,0.014157364552137218
+junction_detail_historic_label,Slip road,1551,0.013195956983392322
+junction_detail_historic_label,More than 4 arms (not roundabout),1479,0.012583378709501769
+junction_detail_historic_label,unknown (self reported),1396,0.011877212088211271
+junction_detail_historic_label,Data missing or out of range,1,8.508031581813232e-06
+junction_control_label,Give way or uncontrolled,50882,0.43290566294582083
+junction_control_label,Data missing or out of range,49366,0.420007487067792
+junction_control_label,Auto traffic signal,13122,0.11164239041655323
+junction_control_label,unknown (self reported),3010,0.025609175061257827
+junction_control_label,Stop sign,773,0.006576708412741628
+junction_control_label,Authorised person,379,0.003224543969507215
+junction_control_label,Not at junction or within 20 metres,4,3.403212632725293e-05
+urban_or_rural_area_label,Urban,79533,0.6766692757963517
+urban_or_rural_area_label,Rural,37975,0.32309249931935746
+urban_or_rural_area_label,Unallocated,28,0.00023822488429077048

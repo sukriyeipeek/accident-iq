@@ -1,0 +1,47 @@
+{
+  "rows": 309822,
+  "raw_columns": 44,
+  "analysis_year": 2019,
+  "years": {
+    "2019": 117536,
+    "2020": 91199,
+    "2021": 101087
+  },
+  "target_distribution": {
+    "1": 4523,
+    "2": 62619,
+    "3": 242680
+  },
+  "train_target": {
+    "Fatal": 1658,
+    "Serious": 22980,
+    "Slight": 92898
+  },
+  "quality": {
+    "duplicate_collision_index_count": 0,
+    "invalid_target_count": 0,
+    "invalid_date_count": 0,
+    "invalid_hour_count": 0,
+    "date_year_mismatch_count": 0,
+    "weekday_mismatch_count": 0,
+    "missing_coordinate_pairs": 59,
+    "zero_coordinate_pairs": 0,
+    "out_of_world_coordinate_rows": 0,
+    "unmapped_label_counts": {
+      "collision_severity_label": 0,
+      "road_type_label": 0,
+      "junction_detail_label": 0,
+      "junction_detail_historic_label": 0,
+      "junction_control_label": 0,
+      "light_conditions_label": 0,
+      "weather_conditions_label": 0,
+      "road_surface_conditions_label": 0,
+      "urban_or_rural_area_label": 0
+    },
+    "nonstandard_speed_rows_2019": 80
+  },
+  "all_integrity_checks_passed": true,
+  "figure_count": 19,
+  "interpretation": "P(severity | police-reported injury collision, X); not accident occurrence risk",
+  "test_policy": "2021 yearly labels were inspected earlier. New feature/target analyses use only 2019. Test is not pristine."
+}

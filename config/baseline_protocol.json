@@ -1,0 +1,16 @@
+{
+  "phase": 4,
+  "train_year": 2019,
+  "validation_year": 2020,
+  "test_year": 2021,
+  "test_scoring": false,
+  "seed": 42,
+  "thread_limit": 1,
+  "models": ["dummy_prior", "logistic", "logistic_balanced"],
+  "primary_selection": "mean_macro_f1_on_2019_quarterly_cv",
+  "tie_break": "lexicographic_model_name",
+  "logistic": {"C": 1.0, "penalty": "l2", "solver": "lbfgs", "tol": 0.000001, "max_iter": 2000},
+  "sampling": "none",
+  "decision_rule": "multiclass_argmax",
+  "hyperparameter_search": false
+}

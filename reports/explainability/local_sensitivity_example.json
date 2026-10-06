@@ -1,0 +1,44 @@
+{
+  "method": "single-feature replacement sensitivity",
+  "explained_class": "Slight",
+  "reference": {
+    "date": "01/07/2019",
+    "time": "12:00",
+    "speed_limit": 30.0,
+    "weather_conditions": 1,
+    "road_surface_conditions": 1,
+    "light_conditions": 1,
+    "road_type": 6,
+    "junction_detail_historic": 0,
+    "junction_control": 0,
+    "urban_or_rural_area": 1,
+    "first_road_class": 3
+  },
+  "factors": [
+    {
+      "feature": "junction_detail_historic",
+      "value": "Crossroads",
+      "reference": "Not at junction or within 20 metres",
+      "predicted_class_probability_change_pp": 13.456546964008886
+    },
+    {
+      "feature": "light_conditions",
+      "value": "Darkness - lights lit",
+      "reference": "Daylight",
+      "predicted_class_probability_change_pp": -7.529426984747634
+    },
+    {
+      "feature": "junction_control",
+      "value": "Auto traffic signal",
+      "reference": "Not at junction or within 20 metres",
+      "predicted_class_probability_change_pp": 6.882982515907049
+    },
+    {
+      "feature": "time",
+      "value": "22:05",
+      "reference": "12:00",
+      "predicted_class_probability_change_pp": -4.061308547402664
+    }
+  ],
+  "interpretation": "Each factor changes one input to a fixed training reference while holding other inputs constant. Changes describe model sensitivity, not causality."
+}

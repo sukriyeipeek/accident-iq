@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.DS_Store
+
+# Raw and generated data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model artifacts and experiment outputs
+models/*
+!models/.gitkeep
+mlruns/
+reports/figures/
+reports/eda/legacy/
+reports/deep_learning/validation_probabilities.npy
+reports/deep_learning/validation_targets.npy
+*.part
+download.log
+download.err
+
+# Frontend dependencies/build output
+frontend/node_modules/
+frontend/dist/

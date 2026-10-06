@@ -1,0 +1,13 @@
+{
+  "model": "PyTorch MLP",
+  "cv_macro_f1": [
+    0.31842698875890285,
+    0.34818808722729244,
+    0.29411044616196363
+  ],
+  "cv_macro_f1_mean": 0.320241840716053,
+  "validation_accuracy": 0.5546771346177042,
+  "validation_macro_f1": 0.3336796274074922,
+  "validation_fatal_recall": 0.5945363048166786,
+  "validation_serious_recall": 0.17341323889948243
+}

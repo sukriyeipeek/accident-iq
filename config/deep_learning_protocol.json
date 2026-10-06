@@ -1,0 +1,16 @@
+{
+  "phase": 6,
+  "seed": 42,
+  "hidden_dimensions": [128, 64],
+  "dropout": [0.25, 0.15],
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 1024,
+  "max_epochs": 30,
+  "early_stopping_patience": 4,
+  "minimum_validation_loss_improvement": 0.0001,
+  "loss": "weighted_cross_entropy",
+  "optimizer": "Adam",
+  "threads": 1,
+  "test_scoring": false
+}

@@ -1,0 +1,10 @@
+{
+  "all_checks_passed": true,
+  "raw_input_files_verified": 10,
+  "saved_artifacts_verified": 10,
+  "rows_verified": 309822,
+  "independent_script_checks": true,
+  "full_partition_round_trip": true,
+  "raw_target_and_timestamp_alignment": true,
+  "independent_train_statistics": true
+}

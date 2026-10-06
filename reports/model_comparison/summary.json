@@ -1,0 +1,649 @@
+{
+  "phase": 7,
+  "selected_model": "random_forest_balanced",
+  "selection": {
+    "selected_model": "random_forest_balanced",
+    "selection_metric": "mean 2019 quarterly CV macro F1",
+    "cv_means": {
+      "dummy_prior": 0.2936456461326872,
+      "logistic": 0.2936456461326872,
+      "logistic_balanced": 0.3243780770008774,
+      "random_forest_balanced": 0.37006778043550237,
+      "lightgbm": 0.29448082653222235,
+      "lightgbm_balanced": 0.350911995906012,
+      "pytorch_mlp": 0.320241840716053
+    },
+    "validation_and_test_used_for_selection": false
+  },
+  "models": [
+    {
+      "model": "random_forest_balanced",
+      "cv_macro_f1_mean": 0.37006778043550237,
+      "cv_macro_f1_std": 0.007308706182391962,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.6000285090845294,
+        "balanced_accuracy": 0.45993289878276644,
+        "macro_f1": 0.3667326977611209,
+        "weighted_f1": 0.640470856284076,
+        "log_loss": 0.8911260516367787,
+        "multiclass_brier": 0.5450606997749032,
+        "roc_auc_ovr_macro": 0.6215099437276593,
+        "average_precision_ovr_macro": 0.3681112567630733,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            585,
+            349,
+            457
+          ],
+          [
+            3242,
+            4979,
+            10134
+          ],
+          [
+            7402,
+            14893,
+            49158
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.052097248196633715,
+            "recall": 0.4205607476635514,
+            "f1": 0.09270998415213946,
+            "support": 1391,
+            "predicted_count": 11229,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7374397876745253,
+            "average_precision_ovr": 0.04817535122303527
+          },
+          "Serious": {
+            "precision": 0.24622916769694872,
+            "recall": 0.2712612367202397,
+            "f1": 0.258139776026545,
+            "support": 18355,
+            "predicted_count": 20221,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5186784015115288,
+            "average_precision_ovr": 0.21362554286033844
+          },
+          "Slight": {
+            "precision": 0.8227418032100956,
+            "recall": 0.6879767119645082,
+            "f1": 0.7493483331046783,
+            "support": 71453,
+            "predicted_count": 59749,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6084116419969239,
+            "average_precision_ovr": 0.8425328762058464
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 107.00650000944734,
+      "artifact_bytes": 10095467
+    },
+    {
+      "model": "lightgbm_balanced",
+      "cv_macro_f1_mean": 0.350911995906012,
+      "cv_macro_f1_std": 0.008150052175064905,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.5287009725983838,
+        "balanced_accuracy": 0.4647372903155202,
+        "macro_f1": 0.3451003606219936,
+        "weighted_f1": 0.5920002627564694,
+        "log_loss": 0.9385942936170444,
+        "multiclass_brier": 0.5743899244689815,
+        "roc_auc_ovr_macro": 0.6248554440816975,
+        "average_precision_ovr_macro": 0.37032929891312233,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            679,
+            372,
+            340
+          ],
+          [
+            4287,
+            5947,
+            8121
+          ],
+          [
+            10534,
+            19328,
+            41591
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.043806451612903224,
+            "recall": 0.48813803019410495,
+            "f1": 0.08039784500621633,
+            "support": 1391,
+            "predicted_count": 15500,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7372846320092656,
+            "average_precision_ovr": 0.04827140044003748
+          },
+          "Serious": {
+            "precision": 0.23187897219947753,
+            "recall": 0.3239989103786434,
+            "f1": 0.27030589518658243,
+            "support": 18355,
+            "predicted_count": 25647,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5263611078830299,
+            "average_precision_ovr": 0.21887703083192767
+          },
+          "Slight": {
+            "precision": 0.8309558059617997,
+            "recall": 0.5820749303738122,
+            "f1": 0.6845973416731822,
+            "support": 71453,
+            "predicted_count": 50052,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6109205923527967,
+            "average_precision_ovr": 0.8438394654674017
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 71.73289987258613,
+      "artifact_bytes": 1324210
+    },
+    {
+      "model": "logistic_balanced",
+      "cv_macro_f1_mean": 0.3243780770008774,
+      "cv_macro_f1_std": 0.0192045908558459,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.4746981874801259,
+        "balanced_accuracy": 0.4721132104478292,
+        "macro_f1": 0.3192636080805817,
+        "weighted_f1": 0.5543373639769882,
+        "log_loss": 1.0208149035314056,
+        "multiclass_brier": 0.6212638230187789,
+        "roc_auc_ovr_macro": 0.6153929538397896,
+        "average_precision_ovr_macro": 0.36580894453338636,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            859,
+            262,
+            270
+          ],
+          [
+            6138,
+            5062,
+            7155
+          ],
+          [
+            16640,
+            17442,
+            37371
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.03634132927190422,
+            "recall": 0.6175413371675054,
+            "f1": 0.06864311970592936,
+            "support": 1391,
+            "predicted_count": 23637,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7368996186192498,
+            "average_precision_ovr": 0.05108254192313218
+          },
+          "Serious": {
+            "precision": 0.222349117104454,
+            "recall": 0.2757831653500409,
+            "f1": 0.2462002383210525,
+            "support": 18355,
+            "predicted_count": 22766,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5038649165991063,
+            "average_precision_ovr": 0.20532626052633418
+          },
+          "Slight": {
+            "precision": 0.8342485936244307,
+            "recall": 0.5230151288259415,
+            "f1": 0.6429474662147632,
+            "support": 71453,
+            "predicted_count": 44796,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6054143263010128,
+            "average_precision_ovr": 0.8410180311506927
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 73.27139982953668,
+      "artifact_bytes": 11640
+    },
+    {
+      "model": "pytorch_mlp",
+      "cv_macro_f1_mean": 0.320241840716053,
+      "cv_macro_f1_std": 0.027084461994239663,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.5546771346177042,
+        "balanced_accuracy": 0.4732635380233667,
+        "macro_f1": 0.3336796274074922,
+        "weighted_f1": 0.6116607261792358,
+        "log_loss": 0.9670258122424462,
+        "multiclass_brier": 0.5885338412114753,
+        "roc_auc_ovr_macro": 0.6159750753231651,
+        "average_precision_ovr_macro": 0.3682998622891555,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            827,
+            184,
+            380
+          ],
+          [
+            5613,
+            3183,
+            9559
+          ],
+          [
+            14743,
+            10134,
+            46576
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.039040740216211116,
+            "recall": 0.5945363048166786,
+            "f1": 0.07327013378222734,
+            "support": 1391,
+            "predicted_count": 21183,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7416329170574676,
+            "average_precision_ovr": 0.05604693687943249
+          },
+          "Serious": {
+            "precision": 0.23576031405081105,
+            "recall": 0.17341323889948243,
+            "f1": 0.19983676544450024,
+            "support": 18355,
+            "predicted_count": 13501,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5016087580074133,
+            "average_precision_ovr": 0.20806580089906845
+          },
+          "Slight": {
+            "precision": 0.8241351853490224,
+            "recall": 0.6518410703539389,
+            "f1": 0.7279319829957489,
+            "support": 71453,
+            "predicted_count": 56515,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6046835509046142,
+            "average_precision_ovr": 0.8407868490889655
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 60.45469990931451,
+      "artifact_bytes": 74374
+    },
+    {
+      "model": "lightgbm",
+      "cv_macro_f1_mean": 0.29448082653222235,
+      "cv_macro_f1_std": 0.0020742109810467147,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.7834735029989364,
+        "balanced_accuracy": 0.3333556588315823,
+        "macro_f1": 0.2929376948064913,
+        "weighted_f1": 0.6884095632555731,
+        "log_loss": 0.560052597380186,
+        "multiclass_brier": 0.3368891044272621,
+        "roc_auc_ovr_macro": 0.6519471171399506,
+        "average_precision_ovr_macro": 0.3868318652810432,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            1390
+          ],
+          [
+            0,
+            2,
+            18353
+          ],
+          [
+            0,
+            3,
+            71450
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1391,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7433155825486255,
+            "average_precision_ovr": 0.04978875035036466
+          },
+          "Serious": {
+            "precision": 0.3333333333333333,
+            "recall": 0.00010896213565785889,
+            "f1": 0.00021785305811230325,
+            "support": 18355,
+            "predicted_count": 6,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5983095850854285,
+            "average_precision_ovr": 0.26482447171808565
+          },
+          "Slight": {
+            "precision": 0.7835031197569989,
+            "recall": 0.9999580143590892,
+            "f1": 0.8785952313613615,
+            "support": 71453,
+            "predicted_count": 91193,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6142161837857976,
+            "average_precision_ovr": 0.8458823737746791
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 93.92370004206896,
+      "artifact_bytes": 1319432
+    },
+    {
+      "model": "dummy_prior",
+      "cv_macro_f1_mean": 0.2936456461326872,
+      "cv_macro_f1_std": 0.002138902745484552,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.7834844680314477,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.2928665699366336,
+        "weighted_f1": 0.6883692262529946,
+        "log_loss": 0.5777869435475712,
+        "multiclass_brier": 0.34549448564417334,
+        "roc_auc_ovr_macro": 0.5,
+        "average_precision_ovr_macro": 0.3333333333333333,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1391
+          ],
+          [
+            0,
+            0,
+            18355
+          ],
+          [
+            0,
+            0,
+            71453
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1391,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.015252360223248062
+          },
+          "Serious": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 18355,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.20126317174530423
+          },
+          "Slight": {
+            "precision": 0.7834844680314477,
+            "recall": 1.0,
+            "f1": 0.8785997098099009,
+            "support": 71453,
+            "predicted_count": 91199,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.5,
+            "average_precision_ovr": 0.7834844680314477
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 74.54869989305735,
+      "artifact_bytes": 9771
+    },
+    {
+      "model": "logistic",
+      "cv_macro_f1_mean": 0.2936456461326872,
+      "cv_macro_f1_std": 0.002138902745484552,
+      "validation": {
+        "rows": 91199,
+        "accuracy": 0.7834844680314477,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.2928665699366336,
+        "weighted_f1": 0.6883692262529946,
+        "log_loss": 0.5611237420638163,
+        "multiclass_brier": 0.33772296284225095,
+        "roc_auc_ovr_macro": 0.6481900919036288,
+        "average_precision_ovr_macro": 0.38531687879459464,
+        "labels": [
+          "Fatal",
+          "Serious",
+          "Slight"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1391
+          ],
+          [
+            0,
+            0,
+            18355
+          ],
+          [
+            0,
+            0,
+            71453
+          ]
+        ],
+        "per_class": {
+          "Fatal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1391,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.015252360223248062,
+            "roc_auc_ovr": 0.7399202730822961,
+            "average_precision_ovr": 0.053878561359287404
+          },
+          "Serious": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 18355,
+            "predicted_count": 0,
+            "precision_defined": false,
+            "recall_defined": true,
+            "prevalence": 0.20126317174530423,
+            "roc_auc_ovr": 0.5949278487841778,
+            "average_precision_ovr": 0.25914235545516356
+          },
+          "Slight": {
+            "precision": 0.7834844680314477,
+            "recall": 1.0,
+            "f1": 0.8785997098099009,
+            "support": 71453,
+            "predicted_count": 91199,
+            "precision_defined": true,
+            "recall_defined": true,
+            "prevalence": 0.7834844680314477,
+            "roc_auc_ovr": 0.6097221538444123,
+            "average_precision_ovr": 0.8429297195693329
+          }
+        }
+      },
+      "inference_batch_128_median_ms": 65.59700006619096,
+      "artifact_bytes": 11634
+    }
+  ],
+  "test_metrics": {
+    "rows": 101087,
+    "accuracy": 0.6023919989711832,
+    "balanced_accuracy": 0.45944267893655283,
+    "macro_f1": 0.36787496381779294,
+    "weighted_f1": 0.6381905982578621,
+    "log_loss": 0.8873937131564383,
+    "multiclass_brier": 0.5434806463556827,
+    "roc_auc_ovr_macro": 0.6245032940678404,
+    "average_precision_ovr_macro": 0.36926883907982905,
+    "labels": [
+      "Fatal",
+      "Serious",
+      "Slight"
+    ],
+    "confusion_matrix": [
+      [
+        612,
+        406,
+        456
+      ],
+      [
+        3539,
+        5656,
+        12089
+      ],
+      [
+        7769,
+        15934,
+        54626
+      ]
+    ],
+    "per_class": {
+      "Fatal": {
+        "precision": 0.05134228187919463,
+        "recall": 0.4151967435549525,
+        "f1": 0.09138420188143945,
+        "support": 1474,
+        "predicted_count": 11920,
+        "precision_defined": true,
+        "recall_defined": true,
+        "prevalence": 0.014581499104731568,
+        "roc_auc_ovr": 0.7466350713489154,
+        "average_precision_ovr": 0.04765116718876056
+      },
+      "Serious": {
+        "precision": 0.25713766139298055,
+        "recall": 0.26573952264611916,
+        "f1": 0.26136783733826247,
+        "support": 21284,
+        "predicted_count": 21996,
+        "precision_defined": true,
+        "recall_defined": true,
+        "prevalence": 0.2105513072897603,
+        "roc_auc_ovr": 0.5233547846372482,
+        "average_precision_ovr": 0.22567790382008113
+      },
+      "Slight": {
+        "precision": 0.813237855622218,
+        "recall": 0.6973917706085868,
+        "f1": 0.750872852233677,
+        "support": 78329,
+        "predicted_count": 67171,
+        "precision_defined": true,
+        "recall_defined": true,
+        "prevalence": 0.7748671936055082,
+        "roc_auc_ovr": 0.6035200262173576,
+        "average_precision_ovr": 0.8344774462306455
+      }
+    }
+  },
+  "test_year": 2021,
+  "test_scored_once": false,
+  "test_scoring_attempts": 2,
+  "test_scoring_note": "Identical scoring was repeated after report JSON serialization failed; no selection or tuning changed.",
+  "test_was_pristine": false,
+  "test_pristine_limitation": "2021 target distribution was inspected during Phase 2 EDA",
+  "test_loaded_after_selection_frozen": true,
+  "selected_artifact": "models/release_v1/selected.joblib",
+  "environment": {
+    "python": "3.11.9",
+    "thread_limit": 1
+  }
+}

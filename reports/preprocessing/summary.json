@@ -1,0 +1,678 @@
+{
+  "phase": 3,
+  "feature_set": "context_v1",
+  "classifier_trained": false,
+  "fit_year": 2019,
+  "raw_features": [
+    "date",
+    "time",
+    "speed_limit",
+    "weather_conditions",
+    "road_surface_conditions",
+    "light_conditions",
+    "road_type",
+    "junction_detail_historic",
+    "junction_control",
+    "urban_or_rural_area",
+    "first_road_class"
+  ],
+  "engineered_features": [
+    "weather_conditions",
+    "road_surface_conditions",
+    "light_conditions",
+    "road_type",
+    "junction_detail_historic",
+    "junction_control",
+    "urban_or_rural_area",
+    "first_road_class",
+    "speed_limit",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "month_sin",
+    "month_cos",
+    "speed_limit_missing"
+  ],
+  "output_feature_count": 63,
+  "output_feature_names": [
+    "speed__speed_limit",
+    "cycles__hour_sin",
+    "cycles__hour_cos",
+    "cycles__weekday_sin",
+    "cycles__weekday_cos",
+    "cycles__month_sin",
+    "cycles__month_cos",
+    "missing__speed_limit_missing",
+    "categories__weather_conditions_Fine + high winds",
+    "categories__weather_conditions_Fine no high winds",
+    "categories__weather_conditions_Fog or mist",
+    "categories__weather_conditions_Other",
+    "categories__weather_conditions_Raining + high winds",
+    "categories__weather_conditions_Raining no high winds",
+    "categories__weather_conditions_Snowing + high winds",
+    "categories__weather_conditions_Snowing no high winds",
+    "categories__weather_conditions___unknown__",
+    "categories__road_surface_conditions_Dry",
+    "categories__road_surface_conditions_Flood over 3cm. deep",
+    "categories__road_surface_conditions_Frost or ice",
+    "categories__road_surface_conditions_Snow",
+    "categories__road_surface_conditions_Wet or damp",
+    "categories__road_surface_conditions___missing__",
+    "categories__road_surface_conditions___unknown__",
+    "categories__light_conditions_Darkness - lighting unknown",
+    "categories__light_conditions_Darkness - lights lit",
+    "categories__light_conditions_Darkness - lights unlit",
+    "categories__light_conditions_Darkness - no lighting",
+    "categories__light_conditions_Daylight",
+    "categories__light_conditions___missing__",
+    "categories__road_type_Dual carriageway",
+    "categories__road_type_One way street",
+    "categories__road_type_Roundabout",
+    "categories__road_type_Single carriageway",
+    "categories__road_type_Slip road",
+    "categories__road_type___unknown__",
+    "categories__junction_detail_historic_Crossroads",
+    "categories__junction_detail_historic_Mini-roundabout",
+    "categories__junction_detail_historic_More than 4 arms (not roundabout)",
+    "categories__junction_detail_historic_Not at junction or within 20 metres",
+    "categories__junction_detail_historic_Other junction",
+    "categories__junction_detail_historic_Private drive or entrance",
+    "categories__junction_detail_historic_Roundabout",
+    "categories__junction_detail_historic_Slip road",
+    "categories__junction_detail_historic_T or staggered junction",
+    "categories__junction_detail_historic___missing__",
+    "categories__junction_detail_historic___unknown__",
+    "categories__junction_control_Authorised person",
+    "categories__junction_control_Auto traffic signal",
+    "categories__junction_control_Give way or uncontrolled",
+    "categories__junction_control_Stop sign",
+    "categories__junction_control___missing__",
+    "categories__junction_control___not_applicable__",
+    "categories__junction_control___unknown__",
+    "categories__urban_or_rural_area_Rural",
+    "categories__urban_or_rural_area_Urban",
+    "categories__urban_or_rural_area___unknown__",
+    "categories__first_road_class_A",
+    "categories__first_road_class_A(M)",
+    "categories__first_road_class_B",
+    "categories__first_road_class_C",
+    "categories__first_road_class_Motorway",
+    "categories__first_road_class_Unclassified"
+  ],
+  "target_mapping": {
+    "0": "Fatal",
+    "1": "Serious",
+    "2": "Slight"
+  },
+  "statistics": {
+    "speed_median_mph": 30.0,
+    "speed_mean_after_imputation_mph": 36.79451402123605,
+    "speed_variance_after_imputation": 196.91414632657992,
+    "fit_samples": 117536,
+    "category_vocabulary": {
+      "weather_conditions": [
+        "Fine + high winds",
+        "Fine no high winds",
+        "Fog or mist",
+        "Other",
+        "Raining + high winds",
+        "Raining no high winds",
+        "Snowing + high winds",
+        "Snowing no high winds",
+        "__unknown__"
+      ],
+      "road_surface_conditions": [
+        "Dry",
+        "Flood over 3cm. deep",
+        "Frost or ice",
+        "Snow",
+        "Wet or damp",
+        "__missing__",
+        "__unknown__"
+      ],
+      "light_conditions": [
+        "Darkness - lighting unknown",
+        "Darkness - lights lit",
+        "Darkness - lights unlit",
+        "Darkness - no lighting",
+        "Daylight",
+        "__missing__"
+      ],
+      "road_type": [
+        "Dual carriageway",
+        "One way street",
+        "Roundabout",
+        "Single carriageway",
+        "Slip road",
+        "__unknown__"
+      ],
+      "junction_detail_historic": [
+        "Crossroads",
+        "Mini-roundabout",
+        "More than 4 arms (not roundabout)",
+        "Not at junction or within 20 metres",
+        "Other junction",
+        "Private drive or entrance",
+        "Roundabout",
+        "Slip road",
+        "T or staggered junction",
+        "__missing__",
+        "__unknown__"
+      ],
+      "junction_control": [
+        "Authorised person",
+        "Auto traffic signal",
+        "Give way or uncontrolled",
+        "Stop sign",
+        "__missing__",
+        "__not_applicable__",
+        "__unknown__"
+      ],
+      "urban_or_rural_area": [
+        "Rural",
+        "Urban",
+        "__unknown__"
+      ],
+      "first_road_class": [
+        "A",
+        "A(M)",
+        "B",
+        "C",
+        "Motorway",
+        "Unclassified"
+      ]
+    }
+  },
+  "splits": {
+    "train": {
+      "year": 2019,
+      "rows": 117536,
+      "shape": [
+        117536,
+        63
+      ],
+      "dtype": "float32",
+      "nnz": 1737043,
+      "density": 0.23458439211059684,
+      "timestamp_min": "2019-01-01T00:06:00",
+      "timestamp_max": "2019-12-31T23:53:00",
+      "speed_missing_rows": 80,
+      "junction_control_outside_nonmissing_rows": 4,
+      "unseen_training_category_rows": {
+        "weather_conditions": 0,
+        "road_surface_conditions": 0,
+        "light_conditions": 0,
+        "road_type": 0,
+        "junction_detail_historic": 0,
+        "junction_control": 0,
+        "urban_or_rural_area": 0,
+        "first_road_class": 0
+      },
+      "unrecognized_code_rows": {
+        "weather_conditions": 0,
+        "road_surface_conditions": 0,
+        "light_conditions": 0,
+        "road_type": 0,
+        "junction_detail_historic": 0,
+        "junction_control": 0,
+        "urban_or_rural_area": 0,
+        "first_road_class": 0
+      }
+    },
+    "validation": {
+      "year": 2020,
+      "rows": 91199,
+      "shape": [
+        91199,
+        63
+      ],
+      "dtype": "float32",
+      "nnz": 1345597,
+      "density": 0.2341986484466117,
+      "timestamp_min": "2020-01-01T00:01:00",
+      "timestamp_max": "2020-12-31T23:59:00",
+      "speed_missing_rows": 12,
+      "junction_control_outside_nonmissing_rows": 2,
+      "unseen_training_category_rows": {
+        "weather_conditions": 1,
+        "road_surface_conditions": 0,
+        "light_conditions": 0,
+        "road_type": 0,
+        "junction_detail_historic": 0,
+        "junction_control": 0,
+        "urban_or_rural_area": 0,
+        "first_road_class": 0
+      },
+      "unrecognized_code_rows": {
+        "weather_conditions": 0,
+        "road_surface_conditions": 0,
+        "light_conditions": 0,
+        "road_type": 0,
+        "junction_detail_historic": 0,
+        "junction_control": 0,
+        "urban_or_rural_area": 0,
+        "first_road_class": 0
+      }
+    },
+    "test": {
+      "year": 2021,
+      "rows": 101087,
+      "shape": [
+        101087,
+        63
+      ],
+      "dtype": "float32",
+      "nnz": 1496714,
+      "density": 0.2350189943253344,
+      "timestamp_min": "2021-01-01T00:17:00",
+      "timestamp_max": "2021-12-31T23:55:00",
+      "speed_missing_rows": 0,
+      "junction_control_outside_nonmissing_rows": 6,
+      "unseen_training_category_rows": {
+        "weather_conditions": 12,
+        "road_surface_conditions": 0,
+        "light_conditions": 0,
+        "road_type": 0,
+        "junction_detail_historic": 0,
+        "junction_control": 0,
+        "urban_or_rural_area": 0,
+        "first_road_class": 0
+      },
+      "unrecognized_code_rows": {
+        "weather_conditions": 0,
+        "road_surface_conditions": 0,
+        "light_conditions": 0,
+        "road_type": 0,
+        "junction_detail_historic": 0,
+        "junction_control": 0,
+        "urban_or_rural_area": 0,
+        "first_road_class": 0
+      }
+    }
+  },
+  "cv_folds": [
+    {
+      "fold": 1,
+      "train_rows": 27636,
+      "validation_rows": 28599,
+      "train_until": "2019-03-31T23:20:00",
+      "validation_from": "2019-04-01T00:01:00",
+      "output_features": 63,
+      "statistics": {
+        "speed_median_mph": 30.0,
+        "speed_mean_after_imputation_mph": 36.69633810971197,
+        "speed_variance_after_imputation": 191.62598311682962,
+        "fit_samples": 27636,
+        "category_vocabulary": {
+          "weather_conditions": [
+            "Fine + high winds",
+            "Fine no high winds",
+            "Fog or mist",
+            "Other",
+            "Raining + high winds",
+            "Raining no high winds",
+            "Snowing + high winds",
+            "Snowing no high winds",
+            "__unknown__"
+          ],
+          "road_surface_conditions": [
+            "Dry",
+            "Flood over 3cm. deep",
+            "Frost or ice",
+            "Snow",
+            "Wet or damp",
+            "__missing__",
+            "__unknown__"
+          ],
+          "light_conditions": [
+            "Darkness - lighting unknown",
+            "Darkness - lights lit",
+            "Darkness - lights unlit",
+            "Darkness - no lighting",
+            "Daylight",
+            "__missing__"
+          ],
+          "road_type": [
+            "Dual carriageway",
+            "One way street",
+            "Roundabout",
+            "Single carriageway",
+            "Slip road",
+            "__unknown__"
+          ],
+          "junction_detail_historic": [
+            "Crossroads",
+            "Mini-roundabout",
+            "More than 4 arms (not roundabout)",
+            "Not at junction or within 20 metres",
+            "Other junction",
+            "Private drive or entrance",
+            "Roundabout",
+            "Slip road",
+            "T or staggered junction",
+            "__missing__",
+            "__unknown__"
+          ],
+          "junction_control": [
+            "Authorised person",
+            "Auto traffic signal",
+            "Give way or uncontrolled",
+            "Stop sign",
+            "__missing__",
+            "__not_applicable__",
+            "__unknown__"
+          ],
+          "urban_or_rural_area": [
+            "Rural",
+            "Urban",
+            "__unknown__"
+          ],
+          "first_road_class": [
+            "A",
+            "A(M)",
+            "B",
+            "C",
+            "Motorway",
+            "Unclassified"
+          ]
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train_rows": 56235,
+      "validation_rows": 30081,
+      "train_until": "2019-06-30T23:45:00",
+      "validation_from": "2019-07-01T00:22:00",
+      "output_features": 63,
+      "statistics": {
+        "speed_median_mph": 30.0,
+        "speed_mean_after_imputation_mph": 36.725171156752914,
+        "speed_variance_after_imputation": 193.504179251847,
+        "fit_samples": 56235,
+        "category_vocabulary": {
+          "weather_conditions": [
+            "Fine + high winds",
+            "Fine no high winds",
+            "Fog or mist",
+            "Other",
+            "Raining + high winds",
+            "Raining no high winds",
+            "Snowing + high winds",
+            "Snowing no high winds",
+            "__unknown__"
+          ],
+          "road_surface_conditions": [
+            "Dry",
+            "Flood over 3cm. deep",
+            "Frost or ice",
+            "Snow",
+            "Wet or damp",
+            "__missing__",
+            "__unknown__"
+          ],
+          "light_conditions": [
+            "Darkness - lighting unknown",
+            "Darkness - lights lit",
+            "Darkness - lights unlit",
+            "Darkness - no lighting",
+            "Daylight",
+            "__missing__"
+          ],
+          "road_type": [
+            "Dual carriageway",
+            "One way street",
+            "Roundabout",
+            "Single carriageway",
+            "Slip road",
+            "__unknown__"
+          ],
+          "junction_detail_historic": [
+            "Crossroads",
+            "Mini-roundabout",
+            "More than 4 arms (not roundabout)",
+            "Not at junction or within 20 metres",
+            "Other junction",
+            "Private drive or entrance",
+            "Roundabout",
+            "Slip road",
+            "T or staggered junction",
+            "__missing__",
+            "__unknown__"
+          ],
+          "junction_control": [
+            "Authorised person",
+            "Auto traffic signal",
+            "Give way or uncontrolled",
+            "Stop sign",
+            "__missing__",
+            "__not_applicable__",
+            "__unknown__"
+          ],
+          "urban_or_rural_area": [
+            "Rural",
+            "Urban",
+            "__unknown__"
+          ],
+          "first_road_class": [
+            "A",
+            "A(M)",
+            "B",
+            "C",
+            "Motorway",
+            "Unclassified"
+          ]
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train_rows": 86316,
+      "validation_rows": 31220,
+      "train_until": "2019-09-30T23:50:00",
+      "validation_from": "2019-10-01T00:01:00",
+      "output_features": 63,
+      "statistics": {
+        "speed_median_mph": 30.0,
+        "speed_mean_after_imputation_mph": 36.863269845683305,
+        "speed_variance_after_imputation": 197.04609007274146,
+        "fit_samples": 86316,
+        "category_vocabulary": {
+          "weather_conditions": [
+            "Fine + high winds",
+            "Fine no high winds",
+            "Fog or mist",
+            "Other",
+            "Raining + high winds",
+            "Raining no high winds",
+            "Snowing + high winds",
+            "Snowing no high winds",
+            "__unknown__"
+          ],
+          "road_surface_conditions": [
+            "Dry",
+            "Flood over 3cm. deep",
+            "Frost or ice",
+            "Snow",
+            "Wet or damp",
+            "__missing__",
+            "__unknown__"
+          ],
+          "light_conditions": [
+            "Darkness - lighting unknown",
+            "Darkness - lights lit",
+            "Darkness - lights unlit",
+            "Darkness - no lighting",
+            "Daylight",
+            "__missing__"
+          ],
+          "road_type": [
+            "Dual carriageway",
+            "One way street",
+            "Roundabout",
+            "Single carriageway",
+            "Slip road",
+            "__unknown__"
+          ],
+          "junction_detail_historic": [
+            "Crossroads",
+            "Mini-roundabout",
+            "More than 4 arms (not roundabout)",
+            "Not at junction or within 20 metres",
+            "Other junction",
+            "Private drive or entrance",
+            "Roundabout",
+            "Slip road",
+            "T or staggered junction",
+            "__missing__",
+            "__unknown__"
+          ],
+          "junction_control": [
+            "Authorised person",
+            "Auto traffic signal",
+            "Give way or uncontrolled",
+            "Stop sign",
+            "__missing__",
+            "__not_applicable__",
+            "__unknown__"
+          ],
+          "urban_or_rural_area": [
+            "Rural",
+            "Urban",
+            "__unknown__"
+          ],
+          "first_road_class": [
+            "A",
+            "A(M)",
+            "B",
+            "C",
+            "Motorway",
+            "Unclassified"
+          ]
+        }
+      }
+    }
+  ],
+  "checks": {
+    "source_snapshot_matches_eda": true,
+    "training_only_fit": true,
+    "transform_does_not_refit": true,
+    "finite_consistent_matrices": true,
+    "serialization_round_trip": true,
+    "chronological_cv": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "scikit_learn": "1.7.2",
+    "pandas": "2.3.1",
+    "numpy": "2.2.6",
+    "joblib": "1.5.2"
+  },
+  "input_manifest": [
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2019.csv",
+      "bytes": 23524706,
+      "sha256": "729806fc1849bbf27ad305a9616c69583e91baf00c326b68e7de9876baa9d558"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2019.csv",
+      "bytes": 23953229,
+      "sha256": "06abaed875713ca4310adb0dd5f3a03a168bc2a55ca63af4a45e9677a229e329"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2019.csv",
+      "bytes": 13468675,
+      "sha256": "a286856211693a31b45b8d414ddd82d6b51e7ffa27b6334662abfd9f82b9612d"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2020.csv",
+      "bytes": 18228231,
+      "sha256": "851b53f39d503130240a918b0ca51a9da2f667fd4e25189fc3cea220793c68f5"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2020.csv",
+      "bytes": 18553536,
+      "sha256": "415fa554e4da1d5ec5965b6e4874b3d54791f91ba28373b1d6fa4c92e8b81ff3"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2020.csv",
+      "bytes": 10149317,
+      "sha256": "05a1a6111dc9aa820e650eb1f3474085ca81b0353359a38b6b8235757fe39da8"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-collision-2021.csv",
+      "bytes": 19208797,
+      "sha256": "e729a3276859120261c616cbc0ac4ac7be034a608895928c41c765b3e3749ba9"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-vehicle-2021.csv",
+      "bytes": 20519491,
+      "sha256": "80d3c8eea4547d9014ef3ce7698ae0942907aafefd8576f614c05fc9777f6d13"
+    },
+    {
+      "path": "data/raw/stats19/dft-road-casualty-statistics-casualty-2021.csv",
+      "bytes": 10674693,
+      "sha256": "272c04fae888c1b09447e55db211c9af43a003a42cd27b184405bcdde13e4df0"
+    },
+    {
+      "path": "config/stats19_data_guide_2025.xlsx",
+      "bytes": 85112,
+      "sha256": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "path": "data/processed/context_v1/rows_test.csv",
+      "bytes": 4134590,
+      "sha256": "7531342d51e524b6c4b822032c510f72204595c5a302e680ce04c4ff5cccc217"
+    },
+    {
+      "path": "data/processed/context_v1/rows_train.csv",
+      "bytes": 4825448,
+      "sha256": "d5372dc0486e704b93142f60788ec3240f931ccc38f75861b499e3b3882b0d4b"
+    },
+    {
+      "path": "data/processed/context_v1/rows_validation.csv",
+      "bytes": 3728095,
+      "sha256": "7d85f9191f46592a3fa97f5623304da1d7a9ec5a854def0d60c5b10c074a9a33"
+    },
+    {
+      "path": "data/processed/context_v1/X_test.npz",
+      "bytes": 989492,
+      "sha256": "ffcd1f28f2d6fcdb137629bdda27db42b9d29be46474efc13ddeb9b23a883a83"
+    },
+    {
+      "path": "data/processed/context_v1/X_train.npz",
+      "bytes": 1133103,
+      "sha256": "24af7118841c66fae714812ef8fabc241d1e9c2507aabaf6557c4b49f9c0e5ec"
+    },
+    {
+      "path": "data/processed/context_v1/X_validation.npz",
+      "bytes": 895156,
+      "sha256": "3a184c0e43bd6f435aa2860abfe0baafb30df71d7dba25a8a0a18a8c81ef667d"
+    },
+    {
+      "path": "data/processed/context_v1/y_test.npy",
+      "bytes": 808824,
+      "sha256": "ca813c33156b0db8d208aa12d03beb4180055fb3fc96c6e0083d71a39fb2c7c5"
+    },
+    {
+      "path": "data/processed/context_v1/y_train.npy",
+      "bytes": 940416,
+      "sha256": "fda6794d7630d2bd395018909a73594b25019d03e65938361098e2dd3ab0c437"
+    },
+    {
+      "path": "data/processed/context_v1/y_validation.npy",
+      "bytes": 729720,
+      "sha256": "0b36faebe3ba3644253ae784ce3eecfc885d1ede49bac8d304c28e6768c08fac"
+    },
+    {
+      "path": "models/preprocessing_context_v1.joblib",
+      "bytes": 9574,
+      "sha256": "3fe3c83d84d4fc44ade56ded43399da8d16664159c103198440d6940f4138a00"
+    }
+  ],
+  "test_policy": "2021 yearly labels were previously inspected. No holdout scoring or category-driven feature tuning in Phase 3.",
+  "cv_policy": "Refit a fresh complete model pipeline per raw-data fold; do not cross-validate cached X_train."
+}

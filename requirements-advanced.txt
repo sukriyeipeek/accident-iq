@@ -1,0 +1,2 @@
+-r requirements-preprocessing.txt
+lightgbm==4.6.0

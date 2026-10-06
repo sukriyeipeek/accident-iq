@@ -1,0 +1,13 @@
+{
+  "date": "01/07/2019",
+  "time": "12:00",
+  "speed_limit": 30.0,
+  "weather_conditions": 1,
+  "road_surface_conditions": 1,
+  "light_conditions": 1,
+  "road_type": 6,
+  "junction_detail_historic": 0,
+  "junction_control": 0,
+  "urban_or_rural_area": 1,
+  "first_road_class": 3
+}
